@@ -205,7 +205,7 @@ SIM_UF <- bind_rows(sim_uf, sim_municipio)
 # Tarefa 8. Exportar o banco de dados com o nome SIM_UF.csv (Exemplo: SIM_RJ.csv)
 
 # Ao terminar a Tarefa 8 fazer um commit com o comentário "dados SIM_UF 2016 e script - SIM - tarefas 1 a 8"  e envie para o repositório Projeto_BDEM_2016
-
+write.csv(SIM_UF, file = "SIM_PA.csv", row.names = FALSE)
 
 
 ####################################
