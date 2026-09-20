@@ -249,6 +249,8 @@ dados_sinasc_1 <- dados_sinasc[, c(3, 4, 5, 6, 11, 12, 13, 14, 18, 20, 21, 22, 2
 # 41: 155066    42: 95313     43: 141411
 # 50: 42432     51: 53531     52: 95563     53: 43340 
 
+dados_sinasc_2 <- subset(dados_sinasc_1, substr(as.character(CODMUNRES), 1, 2) == "15")
+nrow(dados_sinasc_2)
 
 # Ao terminar a Tarefa 3 commit com a mensagem "script BDEM - SINASC - tarefas 1 a 3" e envie para o repositório Projeto_BDEM_2016
 
