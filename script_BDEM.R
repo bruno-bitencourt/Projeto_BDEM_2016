@@ -530,6 +530,7 @@ SINASC_PA <- bind_rows(sinasc_uf, sinasc_municipio)
 
 write.csv(SINASC_PA, file = "SINASC_PA.csv", row.names = FALSE)
 
+
 ####################################
 # ETAPA 3: BANCOS DE DADOS DO SIDRA
 ####################################
