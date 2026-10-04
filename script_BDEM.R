@@ -546,6 +546,23 @@ write.csv(SINASC_PA, file = "SINASC_PA.csv", row.names = FALSE)
 
 # Verificar se a leitura de todos os bancos foi feita corretamente e a estrutura dos dados
 
+dados_sidra_1 <- read.csv2("população residente estimada - UF e municípios - 2016 - SIDRA - tabela_6579.csv", fileEncoding = "latin1")
+dados_sidra_2 <- read.csv2("população residente censo 2010 - UF e municípios - total e por sexo - SIDRA - tabela_1552.csv", fileEncoding = "UTF-8-BOM")
+dados_sidra_3 <- read.csv2("população residente censo 2010 - por faixa etária - UF - SIDRA - tabela_1552.csv", fileEncoding = "UTF-8-BOM")
+dados_sidra_4 <- read.csv2("população residente censo 2010 - por faixa etária e sexo - municípios - SIDRA - tabela_1552.csv", fileEncoding = "UTF-8-BOM")
+
+head(dados_sidra_1)
+str(dados_sidra_1)
+
+head(dados_sidra_2)
+str(dados_sidra_2)
+
+head(dados_sidra_3)
+str(dados_sidra_3)
+
+head(dados_sidra_4)
+str(dados_sidra_4)
+
 
 # Ao terminar a Tarefa 1 commit com a mensagem "script BDEM - SIDRA - tarefa 1" e envie para o repositório Projeto_BDEM_2016
 
