@@ -859,6 +859,9 @@ SINISA_PA <- rbind(sinisa_estado, sinisa_municipios)
 
 
 # Tarefa 4. Exportar o banco de dados com o nome SINISA_UF.csv (Exemplo: SINISA_RJ.csv)
+
+write.csv(SINISA_PA, file = "SINISA_PA.csv", row.names = FALSE)
+
 # Ao terminar a Tarefa 4 commit com o comentário "dados SINISA_UF 2016 e script - SINISA - tarefas 1 a 4"  e enviar para o repositório Projeto_BDEM_2016
 
 
