@@ -837,6 +837,24 @@ dados_sinisa_1 <- subset(dados_sinisa, substr(as.character(CODMUNRES), 1, 2) == 
 
 # Tarefa 3. Criar um banco de dados, de nome SINISA_UF.csv (Exemplo: SINISA_RJ.csv), contendo as variáveis listadas no arquivo “Variáveis - Projeto - Tarefa 3 - SINISA.pdf”
 
+sinisa_municipios <- data.frame(
+  ANO = 2016,
+  NIVEL = "MUNICIPIO",
+  CODMUNRES = dados_sinisa_1$CODMUNRES,
+  POPR_RA = dados_sinisa_1$POPR_RA,
+  POPR_RE = dados_sinisa_1$POPR_RE
+)
+
+sinisa_estado <- data.frame(
+  ANO = 2016,
+  NIVEL = "UF",
+  CODMUNRES = 15,
+  POPR_RA = sum(dados_sinisa_1$POPR_RA, na.rm = TRUE),
+  POPR_RE = sum(dados_sinisa_1$POPR_RE, na.rm = TRUE)
+)
+
+SINISA_PA <- rbind(sinisa_estado, sinisa_municipios)
+
 # Ao terminar a Tarefa 3 commit com a mensagem "script BDEM - SINISA - tarefas 1 a 3" e envie para o repositório Projeto_BDEM_2016
 
 
