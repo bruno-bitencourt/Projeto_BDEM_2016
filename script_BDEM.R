@@ -815,6 +815,16 @@ write.csv(ATLAS_PA, file = "ATLAS_PA.csv", row.names = FALSE)
 # Verificar se a leitura de todos os bancos foi feita corretamente e a estrutura dos dados
 # Remover a pontuação de milhar e converter para formato numérico
 
+dados_sinisa <- read.csv2("agua e esgoto - município - 2016.csv", fileEncoding = "latin1")
+
+head(dados_sinisa)
+str(dados_sinisa)
+
+dados_sinisa$POPR_RA <- as.numeric(gsub("\\.", "", dados_sinisa$POPR_RA))
+dados_sinisa$POPR_RE <- as.numeric(gsub("\\.", "", dados_sinisa$POPR_RE))
+
+str(dados_sinisa)
+
 # Ao terminar a Tarefa 1 commit com a mensagem "script BDEM - SINISA - tarefa 1" e envie para o repositório Projeto_BDEM_2016
 
 
