@@ -910,6 +910,21 @@ BDEM_PA <- merge(BDEM_PA, SINISA_PA, by = c("ANO", "NIVEL", "CODMUNRES"), all = 
 
 # Conferir o banco BDEM_UF após inserção dos indicadores
 
+# Tarefa 2: Inserir os seguintes indicadores epidemiológicos (com apenas duas casas decimais) no BDEM_UF
+
+BDEM_PA$TFG <- round((BDEM_PA$TN / BDEM_PA$POPRC_F_15_49) * 1000, 2)
+BDEM_PA$TMG <- round((BDEM_PA$TO / BDEM_PA$POPRE_T) * 1000, 2)
+BDEM_PA$RMM <- round((BDEM_PA$TO_MT / BDEM_PA$TN) * 100000, 2)
+BDEM_PA$TMM <- round((BDEM_PA$TO_MT / BDEM_PA$POPRC_F_15_49) * 100000, 2)
+BDEM_PA$TMM_P <- round((BDEM_PA$TO_MT_P / BDEM_PA$POPRC_F_15_49) * 100000, 2)
+BDEM_PA$TMN <- round((BDEM_PA$TO_NT / BDEM_PA$TN) * 1000, 2)
+BDEM_PA$TMN_P <- round((BDEM_PA$TO_NT_P / BDEM_PA$TN) * 1000, 2)
+BDEM_PA$TMN_T <- round((BDEM_PA$TO_NT_T / BDEM_PA$TN) * 1000, 2)
+BDEM_PA$TMI <- round(((BDEM_PA$TO_NT + BDEM_PA$TO_PNT) / BDEM_PA$TN) * 1000, 2)
+
+str(BDEM_PA)
+head(BDEM_PA)
+
 # Ao terminar a Tarefa 2 commit com a mensagem "script BDEM - BDEM - tarefas 1 a 2" e envie para o repositório Projeto_BDEM_2016
 
 
