@@ -930,4 +930,4 @@ head(BDEM_PA)
 
 # Tarefa 3: Exportar o banco de dados com o nome BDEM_UF.csv (Exemplo: BDEM_RJ.csv)
 # Ao terminar a Tarefa 3 commit com o comentário "dados BDEM_UF 2016 e script - BDEM - tarefas 1 a 3"  e enviar para o repositório Projeto_BDEM_2016
- 
+write.csv(BDEM_PA, file = "BDEM_PA.csv", row.names = FALSE)
