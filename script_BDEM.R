@@ -880,6 +880,19 @@ write.csv(SINISA_PA, file = "SINISA_PA.csv", row.names = FALSE)
 # Lembre-se que SIDRA e ATLAS tem CODMUNRES com 7 dígitos e SINASC, SIM e SINISA com 6 dígitos
 # Além disso dentro do merge all = TRUE garante a manutenção de qualquer município presente em um dos bancos envolvidos no merge
 
+SIM_PA <- read.csv("SIM_PA.csv")
+SINASC_PA <- read.csv("SINASC_PA.csv")
+SIDRA_PA <- read.csv("SIDRA_PA.csv")
+ATLAS_PA <- read.csv("ATLAS_PA.csv")
+SINISA_PA <- read.csv("SINISA_PA.csv")
+
+SIDRA_PA$CODMUNRES <- as.numeric(substr(as.character(SIDRA_PA$CODMUNRES), 1, 6))
+ATLAS_PA$CODMUNRES <- as.numeric(substr(as.character(ATLAS_PA$CODMUNRES), 1, 6))
+
+BDEM_PA <- merge(SIM_PA, SINASC_PA, by = c("ANO", "NIVEL", "CODMUNRES"), all = TRUE)
+BDEM_PA <- merge(BDEM_PA, SIDRA_PA, by = c("ANO", "NIVEL", "CODMUNRES"), all = TRUE)
+BDEM_PA <- merge(BDEM_PA, ATLAS_PA, by = c("ANO", "NIVEL", "CODMUNRES"), all = TRUE)
+BDEM_PA <- merge(BDEM_PA, SINISA_PA, by = c("ANO", "NIVEL", "CODMUNRES"), all = TRUE)
 
 # Ao terminar a Tarefa 1 commit com a mensagem "script BDEM - BDEM - tarefa 1" e envie para o repositório Projeto_BDEM_2016
 
